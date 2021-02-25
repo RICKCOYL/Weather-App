@@ -13,7 +13,7 @@ const populateUi = () => {
         document.querySelector('#description').textContent = `The weather will be ${result[0][0].description}`;
         document.querySelector('#temp').textContent = `Temperature is ${result[2].temp}`;
       })
-      .catch(err => {
+      .catch(() => {
         const errorMessage = document.querySelector('#error');
         errorMessage.setAttribute('class', 'alert alert-warning');
         errorMessage.setAttribute('role', 'alert');
