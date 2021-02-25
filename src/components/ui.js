@@ -1,5 +1,5 @@
 
-import { Weather } from './request';
+import Weather from './request';
 
 const searchbtn = document.querySelector('#change-btn');
 
