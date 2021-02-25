@@ -9,8 +9,9 @@ export class Weather {
         const res = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.city},${this.country}id=524901&appid=${this.apiKey}`);
 
         const responseData = await res.json();
-
-        return [responseData.weather, responseData.sys];
+        //const json = [responseData.weather, responseData.sys, responseData.main];
+        //const data = JSON.parse(json);
+        return [responseData.weather, responseData.sys, responseData.main];
     }
 
     changeLocation(city, country) {

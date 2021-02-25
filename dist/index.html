@@ -17,10 +17,12 @@
             <button type="button" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#locmodal">
                 Change Location
             </button>
-            <h1 id="location"></h1>
-            <h3 id="description"></h3>
-            <h3 id="temp"></h3>
-            <img src="" alt="" id="icon">
+
+            <h1 id="location" class="text-center"></h1>
+            <h4 id="description" class="text-center"></h4>
+            <h6 id="temp" class="text-center"></h6>
+            <span id="icon"></span>
+            <div id="error"></div>
         </div>
     </section>
 
@@ -34,10 +36,10 @@
                 <div class="modal-body">
                     <form id="w-form">
                         <div class="form-group mb-2">
-                            <input type="text" class="form-control" placeholder="country">
+                            <input type="text" class="form-control" id="country" placeholder="country">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="city">
+                            <input type="text" class="form-control" placeholder="city" id="city">
                         </div>
                     </form>
                 </div>
