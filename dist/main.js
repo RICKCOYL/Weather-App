@@ -50,13 +50,23 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 
 /***/ }),
 
+/***/ "./src/components/request.js":
+/*!***********************************!*\
+  !*** ./src/components/request.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"Weather\": () => (/* binding */ Weather)\n/* harmony export */ });\nclass Weather {\r\n    constructor(city, country) {\r\n        this.apiKey = '1a8dd2ac8b70847191851bae10b18005';\r\n        this.city = city;\r\n        this.country = country;\r\n    }\r\n\r\n    async getWeather() {\r\n        const res = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.city},${this.country}id=524901&appid=${this.apiKey}`);\r\n\r\n        const responseData = await res.json();\r\n\r\n        return [responseData.weather, responseData.sys];\r\n    }\r\n\r\n    changeLocation(city, country) {\r\n        this.city = city;\r\n        this.country = country;\r\n    }\r\n\r\n}\r\n\r\n\n\n//# sourceURL=webpack://Weather-App/./src/components/request.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css/style.css */ \"./src/css/style.css\");\n\n\n//# sourceURL=webpack://Weather-App/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css/style.css */ \"./src/css/style.css\");\n/* harmony import */ var _components_request__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/request */ \"./src/components/request.js\");\n\r\n\r\n\r\n\r\n\r\nconst weather = new _components_request__WEBPACK_IMPORTED_MODULE_1__.Weather('kampala');\r\n\r\n\r\nweather.getWeather()\r\n    .then(result => {\r\n        console.log(result);\r\n    })\r\n    .catch(err => console.log(err));\r\n\n\n//# sourceURL=webpack://Weather-App/./src/index.js?");
 
 /***/ })
 
