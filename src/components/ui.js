@@ -7,8 +7,6 @@ const weather = new Weather('kigali', 'rwanda');
 const populateUi = () => {
 
 
-    //const ui = new UI();
-
     const getReport = () => {
         weather.getWeather()
             .then(result => {
@@ -21,9 +19,6 @@ const populateUi = () => {
                 errorMessage.setAttribute('class', 'alert alert-warning');
                 errorMessage.setAttribute('role', 'alert');
                 errorMessage.textContent = 'PLEASE SEARCH FOR A VALID CITY AND COUNTRY';
-                $("#error").fadeTo(2000, 500).slideUp(500, function () {
-                    $("#error").slideUp(500);
-                });
             });
     };
 
