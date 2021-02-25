@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project: Weather-Report-App
+# Project: Weather-App
 
 > A Front-end web application that fetches the current weather data about a specified location/region/country using the http://api.openweathermap.org/ API.
 
