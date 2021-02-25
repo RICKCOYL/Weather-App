@@ -3,7 +3,8 @@ import Weather from './request';
 
 const searchbtn = document.querySelector('#change-btn');
 
-const weather = new Weather('kigali', 'rwanda');
+
+const weather = new Weather(document.querySelector('#city').value, document.querySelector('#country').value);
 
 const populateUi = () => {
   const getReport = () => {
