@@ -2,8 +2,7 @@ import './css/style.css';
 import { Weather } from './components/request';
 //import { UI } from "./components/ui";
 
-const cityInput = document.querySelector('#city');
-const countryInput = document.querySelector('#country');
+
 const searchbtn = document.querySelector('#change-btn');
 
 const weather = new Weather('kigali', 'rwanda');
@@ -15,9 +14,8 @@ const getReport = () => {
     weather.getWeather()
         .then(result => {
             document.querySelector('#location').textContent = `${result[1].country}`;
-            document.querySelector('#description').textContent = `The weather wil be ${result[0][0].description}`;
-            document.querySelector('#icon').textContent = `${result[0][0].icon}`;
-            document.querySelector('#temp').textContent = `Temperature ${result[2].temp}`;
+            document.querySelector('#description').textContent = `The weather will be ${result[0][0].description}`;
+            document.querySelector('#temp').textContent = `Temperature is ${result[2].temp}`;
 
             console.log(result);
             //ui.weatherDetails(result);
@@ -29,6 +27,15 @@ const getReport = () => {
 
 
 document.addEventListener('DOMContentLoaded', getReport);
+searchbtn.addEventListener('click', () => {
+    const cityInput = document.querySelector('#city').value;
+    const countryInput = document.querySelector('#country').value;
+
+    weather.changeLocation();
+    getReport();
+
+    $('#locmodal').modal('hide');
+});
 
 
 
