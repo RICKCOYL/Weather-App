@@ -31,7 +31,7 @@ searchbtn.addEventListener('click', () => {
     const cityInput = document.querySelector('#city').value;
     const countryInput = document.querySelector('#country').value;
 
-    weather.changeLocation();
+    weather.changeLocation(cityInput, countryInput);
     getReport();
 
     $('#locmodal').modal('hide');
