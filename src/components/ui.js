@@ -1,20 +1,45 @@
-//import { Weather } from './components/request';
 
-////const weather = new Weather('nairobi', 'kenya');
-//const weather = new Weather('kampala', 'uganda');
+import { Weather } from './request';
+const searchbtn = document.querySelector('#change-btn');
 
-//export class UI {
-//    constructor() {
-//        this.location = document.querySelector('#location');
-//        this.description = document.querySelector('#description');
-//        this.temp = document.querySelector('#temp');
-//        this.icon = document.querySelector('#icon');
-//    }
+const weather = new Weather('kigali', 'rwanda');
 
-//    weatherDetails(weather) {
-//        this.location.textContent = weather.sys.name;
-//        this.description.textContent = weather.weather.description;
-//        this.temp.textContent = weather.main.temp;
-//        //this.icon.setAttribute('src', weather.weather.icon);
-//    }
-//}
+const populateUi = () => {
+
+
+    //const ui = new UI();
+
+    const getReport = () => {
+        weather.getWeather()
+            .then(result => {
+                document.querySelector('#location').textContent = `${result[1].country}`;
+                document.querySelector('#description').textContent = `The weather will be ${result[0][0].description}`;
+                document.querySelector('#temp').textContent = `Temperature is ${result[2].temp}`;
+            })
+            .catch(err => {
+                const errorMessage = document.querySelector('#error');
+                errorMessage.setAttribute('class', 'alert alert-warning');
+                errorMessage.setAttribute('role', 'alert');
+                errorMessage.textContent = 'PLEASE SEARCH FOR A VALID CITY AND COUNTRY';
+                $("#error").fadeTo(2000, 500).slideUp(500, function () {
+                    $("#error").slideUp(500);
+                });
+            });
+    };
+
+
+
+
+    document.addEventListener('DOMContentLoaded', getReport);
+    searchbtn.addEventListener('click', () => {
+        const cityInput = document.querySelector('#city').value;
+        const countryInput = document.querySelector('#country').value;
+
+        weather.changeLocation(cityInput, countryInput);
+        getReport();
+
+        $('#locmodal').modal('hide');
+    });
+};
+
+export default populateUi;
