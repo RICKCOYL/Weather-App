@@ -1,6 +1,10 @@
 
 import Weather from './request';
 import { cToF } from './convert';
+import { UI } from './app';
+
+const ui = new UI();
+//console.log(ui);
 
 const searchbtn = document.querySelector('#change-btn');
 
@@ -11,23 +15,28 @@ const populateUi = () => {
   const getReport = () => {
     weather.getWeather()
       .then(result => {
-        document.querySelector('#location').textContent = `${result[1].country}, ${result[3].name}`;
-        document.querySelector('#description').textContent = `The weather will be ${result[0][0].description}`;
+        //document.querySelector('#location').textContent = `${result[1].country}, ${result[3].name}`;
+        //document.querySelector('#description').textContent = `The weather will be ${result[0][0].description}`;
         // document.querySelector('#temp').textContent = `Temperature is ${result[2].temp}`;
         // console.log('hello');
-        document.getElementById('button').addEventListener('click', () => {
-          const x = document.getElementById('temps');
-          // console.log('hello');
-          if (x.innerHTML === `${result[2].temp}°C`) {
-            const FH = `${cToF(result[2].temp)}°F`;
-            x.innerHTML = FH;
-            console.log(x);
-          } else {
-            x.innerHTML = `${result[2].temp}°C`;
-          }
-        });
-        document.querySelector('#icon').setAttribute('src', `http://openweathermap.org/img/wn/${result[3].weather[0].icon}@2x.png`);
-      })
+        //document.getElementById('button').addEventListener('click', () => {
+        //  const x = document.getElementById('temps');
+        //  // console.log('hello');
+        //  if (x.innerHTML === `${result[2].temp}°C`) {
+        //    const FH = `${cToF(result[2].temp)}°F`;
+        //    x.innerHTML = FH;
+        //    console.log(x);
+        //  } else {
+        //    x.innerHTML = `${result[2].temp}°C`;
+        //  }
+        //});
+        //document.querySelector('#icon').setAttribute('src', `http://openweathermap.org/img/wn/${result[3].weather[0].icon}@2x.png`);
+
+        console.log(result);
+        console.log(this.location.result[3].name);
+      }
+
+      )
       .catch(() => {
         const errorMessage = document.querySelector('#error');
         errorMessage.setAttribute('class', 'alert alert-warning');
@@ -49,4 +58,4 @@ const populateUi = () => {
   });
 };
 
-export default populateUi;
+//export default populateUi;

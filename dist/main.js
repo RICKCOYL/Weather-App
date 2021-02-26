@@ -50,33 +50,13 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 
 /***/ }),
 
-/***/ "./src/components/convert.js":
-/*!***********************************!*\
-  !*** ./src/components/convert.js ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"cToF\": () => (/* binding */ cToF)\n/* harmony export */ });\nconst cToF = (celsius) => {\n    const cTemp = celsius;\n    // eslint-disable-next-line no-unused-vars\n    const cToFahr = cTemp * 9 / 5 + 32;\n};\n\n// const myFunction = () => {\n//    const x = document.getElementById('temps');\n//    console.log(x);\n//    if (x.innerHTML === 'Hello') {\n//        x.innerHTML = 'Swapped text!';\n//    } else {\n//        x.innerHTML = 'Hello';\n//    }\n// };\n\n// document.getElementById('button').addEventListener('click', myFunction);\n\n\n\n\n//# sourceURL=webpack://Weather-App/./src/components/convert.js?");
-
-/***/ }),
-
 /***/ "./src/components/request.js":
 /*!***********************************!*\
   !*** ./src/components/request.js ***!
   \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Weather)\n/* harmony export */ });\nclass Weather {\n  constructor(city) {\n    this.apiKey = '1a8dd2ac8b70847191851bae10b18005';\n    this.city = city;\n  }\n\n  async getWeather() {\n    const res = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.city},${this.country}id=524901&appid=${this.apiKey}&units=metric`);\n\n    const responseData = await res.json();\n\n    return [responseData.weather, responseData.sys, responseData.main, responseData];\n  }\n\n  changeLocation(city) {\n    this.city = city;\n  }\n}\n\n\n//# sourceURL=webpack://Weather-App/./src/components/request.js?");
-
-/***/ }),
-
-/***/ "./src/components/ui.js":
-/*!******************************!*\
-  !*** ./src/components/ui.js ***!
-  \******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _request__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./request */ \"./src/components/request.js\");\n/* harmony import */ var _convert__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./convert */ \"./src/components/convert.js\");\n\n\n\n\nconst searchbtn = document.querySelector('#change-btn');\n\n\nconst weather = new _request__WEBPACK_IMPORTED_MODULE_0__.default(document.querySelector('#city').value);\n\nconst populateUi = () => {\n  const getReport = () => {\n    weather.getWeather()\n      .then(result => {\n        document.querySelector('#location').textContent = `${result[1].country}, ${result[3].name}`;\n        document.querySelector('#description').textContent = `The weather will be ${result[0][0].description}`;\n        // document.querySelector('#temp').textContent = `Temperature is ${result[2].temp}`;\n        // console.log('hello');\n        document.getElementById('button').addEventListener('click', () => {\n          const x = document.getElementById('temps');\n          // console.log('hello');\n          if (x.innerHTML === `${result[2].temp}°C`) {\n            const FH = `${(0,_convert__WEBPACK_IMPORTED_MODULE_1__.cToF)(result[2].temp)}°F`;\n            x.innerHTML = FH;\n            console.log(x);\n          } else {\n            x.innerHTML = `${result[2].temp}°C`;\n          }\n        });\n        document.querySelector('#icon').setAttribute('src', `http://openweathermap.org/img/wn/${result[3].weather[0].icon}@2x.png`);\n      })\n      .catch(() => {\n        const errorMessage = document.querySelector('#error');\n        errorMessage.setAttribute('class', 'alert alert-warning');\n        errorMessage.setAttribute('role', 'alert');\n        errorMessage.textContent = 'PLEASE SEARCH FOR A VALID CITY';\n      });\n  };\n\n\n  document.addEventListener('DOMContentLoaded', getReport);\n  searchbtn.addEventListener('click', () => {\n    const cityInput = document.querySelector('#city').value;\n\n\n    weather.changeLocation(cityInput);\n    getReport();\n\n    $('#locmodal').modal('hide');\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (populateUi);\n\n\n//# sourceURL=webpack://Weather-App/./src/components/ui.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass Weather {\n  constructor(city) {\n    this.apiKey = '1a8dd2ac8b70847191851bae10b18005';\n    this.city = city;\n  }\n\n  async getWeather() {\n    const res = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.city},${this.country}id=524901&appid=${this.apiKey}&units=metric`);\n\n    const responseData = await res.json();\n\n    return [responseData.weather, responseData.sys, responseData.main, responseData];\n  }\n\n  changeLocation(city) {\n    this.city = city;\n  }\n}\nconst weather = new Weather(document.querySelector('#city').value);\nconst searchbtn = document.querySelector('#change-btn');\nconst getReport = () => {\n  weather.getWeather()\n    .then(result => {\n      document.querySelector('#location').textContent = `${result[1].country}, ${result[3].name}`;\n      document.querySelector('#description').textContent = `The weather will be ${result[0][0].description}`;\n      document.querySelector('#temp').textContent = `Temperature is ${result[2].temp}`;\n      document.querySelector('#icon').setAttribute('src', `http://openweathermap.org/img/wn/${result[3].weather[0].icon}@2x.png`);\n    }\n\n    )\n    .catch(() => {\n      const errorMessage = document.querySelector('#error');\n      errorMessage.setAttribute('class', 'alert alert-warning');\n      errorMessage.setAttribute('role', 'alert');\n      errorMessage.textContent = 'PLEASE SEARCH FOR A VALID CITY';\n    });\n};\n\n\ndocument.addEventListener('DOMContentLoaded', getReport);\nsearchbtn.addEventListener('click', () => {\n  const cityInput = document.querySelector('#city').value;\n\n\n  weather.changeLocation(cityInput);\n  getReport();\n\n  $('#locmodal').modal('hide');\n});\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getReport);\n\n//# sourceURL=webpack://Weather-App/./src/components/request.js?");
 
 /***/ }),
 
@@ -86,7 +66,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_ui__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/ui */ \"./src/components/ui.js\");\n/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./css/style.css */ \"./src/css/style.css\");\n\n\n// import { cToF, myFunction } from './components/convert';\n\n(0,_components_ui__WEBPACK_IMPORTED_MODULE_0__.default)();\n// myFunction();\n\n\n//# sourceURL=webpack://Weather-App/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./css/style.css */ \"./src/css/style.css\");\n/* harmony import */ var _components_request__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/request */ \"./src/components/request.js\");\n//import populateUi from './components/ui';\n\n\n// import { cToF, myFunction } from './components/convert';\n\n//populateUi();\n// myFunction();\n(0,_components_request__WEBPACK_IMPORTED_MODULE_1__.default)();\n\n\n//# sourceURL=webpack://Weather-App/./src/index.js?");
 
 /***/ })
 

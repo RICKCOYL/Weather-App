@@ -1,6 +1,8 @@
-import populateUi from './components/ui';
+//import populateUi from './components/ui';
 import './css/style.css';
+import getReport from './components/request';
 // import { cToF, myFunction } from './components/convert';
 
-populateUi();
+//populateUi();
 // myFunction();
+getReport();
