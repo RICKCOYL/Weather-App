@@ -1,8 +1,7 @@
 export default class Weather {
-  constructor(city, country) {
+  constructor(city) {
     this.apiKey = '1a8dd2ac8b70847191851bae10b18005';
     this.city = city;
-    this.country = country;
   }
 
   async getWeather() {
@@ -12,8 +11,7 @@ export default class Weather {
     return [responseData.weather, responseData.sys, responseData.main];
   }
 
-  changeLocation(city, country) {
+  changeLocation(city) {
     this.city = city;
-    this.country = country;
   }
 }

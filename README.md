@@ -48,9 +48,9 @@ git clone https://github.com/RICKCOYL/Weather-App.git
 
 👤 **RICK OBURU**
 
-- Github: [https://github.com/RICKCOYL](https://github.com/RICKCOYL)
-- Twitter: [https://twitter.com/rickcoyl](https://twitter.com/rickcoyl)
-- Linkedin: [https://www.linkedin.com/in/rick-oburu/](https://www.linkedin.com/in/rick-oburu/)
+- Github: [@RICKCOYL](https://github.com/RICKCOYL)
+- Twitter: [@rickcoyl](https://twitter.com/rickcoyl)
+- Linkedin: [Rick Oburu](https://www.linkedin.com/in/rick-oburu/)
 
 
 ## 🤝 Contributing

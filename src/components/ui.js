@@ -4,7 +4,7 @@ import Weather from './request';
 const searchbtn = document.querySelector('#change-btn');
 
 
-const weather = new Weather(document.querySelector('#city').value, document.querySelector('#country').value);
+const weather = new Weather(document.querySelector('#city').value);
 
 const populateUi = () => {
   const getReport = () => {
@@ -26,9 +26,9 @@ const populateUi = () => {
   document.addEventListener('DOMContentLoaded', getReport);
   searchbtn.addEventListener('click', () => {
     const cityInput = document.querySelector('#city').value;
-    const countryInput = document.querySelector('#country').value;
 
-    weather.changeLocation(cityInput, countryInput);
+
+    weather.changeLocation(cityInput);
     getReport();
 
     $('#locmodal').modal('hide');
