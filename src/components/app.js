@@ -20,12 +20,7 @@ const populateDom = () => {
                 x.innerHTML = `${res.main.temp}°C`;
             }
         });
-    }).catch(() => {
-        const errorMessage = document.querySelector('#error');
-        errorMessage.setAttribute('class', 'alert alert-warning');
-        errorMessage.setAttribute('role', 'alert');
-        errorMessage.textContent = 'PLEASE SEARCH FOR A VALID CITY';
-    });
+    }).catch(err => err);
 };
 
 
