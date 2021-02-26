@@ -5,7 +5,7 @@ export default class Weather {
   }
 
   async getWeather() {
-    const res = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.city},${this.country}id=524901&appid=${this.apiKey}`);
+    const res = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.city},${this.country}id=524901&appid=${this.apiKey}&units=metric`);
 
     const responseData = await res.json();
 
