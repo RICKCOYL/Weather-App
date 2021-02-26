@@ -13,7 +13,10 @@ const populateUi = () => {
         document.querySelector('#location').textContent = `${result[1].country}, ${result[3].name}`;
         document.querySelector('#description').textContent = `The weather will be ${result[0][0].description}`;
         document.querySelector('#temp').textContent = `Temperature is ${result[2].temp}`;
-        // console.log(result[3].name);
+        document.querySelector('#icon').setAttribute('src', `http://openweathermap.org/img/wn/${result[3].weather[0].icon}@2x.png`,);
+
+        //console.log();
+
       })
       .catch(() => {
         const errorMessage = document.querySelector('#error');
