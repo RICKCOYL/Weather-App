@@ -1,5 +1,6 @@
 
 import Weather from './request';
+import { cToF } from './convert';
 
 const searchbtn = document.querySelector('#change-btn');
 
@@ -12,11 +13,19 @@ const populateUi = () => {
       .then(result => {
         document.querySelector('#location').textContent = `${result[1].country}, ${result[3].name}`;
         document.querySelector('#description').textContent = `The weather will be ${result[0][0].description}`;
-        document.querySelector('#temp').textContent = `Temperature is ${result[2].temp}`;
-        document.querySelector('#icon').setAttribute('src', `http://openweathermap.org/img/wn/${result[3].weather[0].icon}@2x.png`,);
-
-        //console.log();
-
+        // document.querySelector('#temp').textContent = `Temperature is ${result[2].temp}`;
+        // console.log('hello');
+        document.getElementById('button').addEventListener('click', () => {
+          const x = document.getElementById('temps');
+          // console.log('hello');
+          if (x.innerHTML === `${result[2].temp}C°`) {
+            x.innerHTML = 'Swapped text!';
+          } else {
+            x.innerHTML = `${result[2].temp}C°`;
+            console.log(x);
+          }
+        });
+        document.querySelector('#icon').setAttribute('src', `http://openweathermap.org/img/wn/${result[3].weather[0].icon}@2x.png`);
       })
       .catch(() => {
         const errorMessage = document.querySelector('#error');
