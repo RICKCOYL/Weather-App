@@ -1,61 +1,59 @@
 
-import Weather from './request';
-import { cToF } from './convert';
-import { UI } from './app';
+// import Weather from './request';
+// import { cToF } from './convert';
+// import { UI } from './app';
 
-const ui = new UI();
-//console.log(ui);
+// const ui = new UI();
+// // console.log(ui);
 
-const searchbtn = document.querySelector('#change-btn');
-
-
-const weather = new Weather(document.querySelector('#city').value);
-
-const populateUi = () => {
-  const getReport = () => {
-    weather.getWeather()
-      .then(result => {
-        //document.querySelector('#location').textContent = `${result[1].country}, ${result[3].name}`;
-        //document.querySelector('#description').textContent = `The weather will be ${result[0][0].description}`;
-        // document.querySelector('#temp').textContent = `Temperature is ${result[2].temp}`;
-        // console.log('hello');
-        //document.getElementById('button').addEventListener('click', () => {
-        //  const x = document.getElementById('temps');
-        //  // console.log('hello');
-        //  if (x.innerHTML === `${result[2].temp}°C`) {
-        //    const FH = `${cToF(result[2].temp)}°F`;
-        //    x.innerHTML = FH;
-        //    console.log(x);
-        //  } else {
-        //    x.innerHTML = `${result[2].temp}°C`;
-        //  }
-        //});
-        //document.querySelector('#icon').setAttribute('src', `http://openweathermap.org/img/wn/${result[3].weather[0].icon}@2x.png`);
-
-        console.log(result);
-        console.log(this.location.result[3].name);
-      }
-
-      )
-      .catch(() => {
-        const errorMessage = document.querySelector('#error');
-        errorMessage.setAttribute('class', 'alert alert-warning');
-        errorMessage.setAttribute('role', 'alert');
-        errorMessage.textContent = 'PLEASE SEARCH FOR A VALID CITY';
-      });
-  };
+// const searchbtn = document.querySelector('#change-btn');
 
 
-  document.addEventListener('DOMContentLoaded', getReport);
-  searchbtn.addEventListener('click', () => {
-    const cityInput = document.querySelector('#city').value;
+// const weather = new Weather(document.querySelector('#city').value);
+
+// const populateUi = () => {
+//  const getReport = () => {
+//    weather.getWeather()
+//      .then(result => {
+//        // document.querySelector('#location').textContent = `${result[1].country}, ${result[3].name}`;
+//        // document.querySelector('#description').textContent = `The weather will be ${result[0][0].description}`;
+//        // document.querySelector('#temp').textContent = `Temperature is ${result[2].temp}`;
+//        // console.log('hello');
+//        // document.getElementById('button').addEventListener('click', () => {
+//        //  const x = document.getElementById('temps');
+//        //  // console.log('hello');
+//        //  if (x.innerHTML === `${result[2].temp}°C`) {
+//        //    const FH = `${cToF(result[2].temp)}°F`;
+//        //    x.innerHTML = FH;
+//        //    console.log(x);
+//        //  } else {
+//        //    x.innerHTML = `${result[2].temp}°C`;
+//        //  }
+//        // });
+//        // document.querySelector('#icon').setAttribute('src', `http://openweathermap.org/img/wn/${result[3].weather[0].icon}@2x.png`);
+
+//        console.log(result);
+//        console.log(this.location.result[3].name);
+//      })
+//      .catch(() => {
+//        const errorMessage = document.querySelector('#error');
+//        errorMessage.setAttribute('class', 'alert alert-warning');
+//        errorMessage.setAttribute('role', 'alert');
+//        errorMessage.textContent = 'PLEASE SEARCH FOR A VALID CITY';
+//      });
+//  };
 
 
-    weather.changeLocation(cityInput);
-    getReport();
+//  document.addEventListener('DOMContentLoaded', getReport);
+//  searchbtn.addEventListener('click', () => {
+//    const cityInput = document.querySelector('#city').value;
 
-    $('#locmodal').modal('hide');
-  });
-};
 
-//export default populateUi;
+//    weather.changeLocation(cityInput);
+//    getReport();
+
+//    $('#locmodal').modal('hide');
+//  });
+// };
+
+// // export default populateUi;

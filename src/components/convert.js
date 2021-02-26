@@ -1,7 +1,7 @@
 const cToF = (celsius) => {
-    const cTemp = celsius;
-    // eslint-disable-next-line no-unused-vars
-    const cToFahr = cTemp * 9 / 5 + 32;
+  const cTemp = celsius;
+  // eslint-disable-next-line no-unused-vars
+  const cToFahr = cTemp * 9 / 5 + 32;
 };
 
 // const myFunction = () => {

@@ -1,13 +1,15 @@
-class UI {
-    constructor() {
-        this.location = document.querySelector('#location');
-        this.desc = document.querySelector('#description');
-        this.image = document.querySelector('#icon');
-    }
+function populateDom() {
+    const city = document.querySelector('#city').value;
+    const apiKey = 'c5b93e5f844aed131edab3bb66a3d62d';
+    const wLink = (`http://api.openweathermap.org/data/2.5/weather?id=524901&appid=${apiKey}`);
+    //console.log(responseData.weather);
+    fetch(wLink).then(res => {
+        return res.json();
+    }).then(function (res) {
+        console.log(res);
+    });
 
-    paint(weather) {
-        this.location.textContent = weather[1].country;
-    }
-}
+};
 
-export { UI };
+
+export default populateDom;
