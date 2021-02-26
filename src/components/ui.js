@@ -18,11 +18,12 @@ const populateUi = () => {
         document.getElementById('button').addEventListener('click', () => {
           const x = document.getElementById('temps');
           // console.log('hello');
-          if (x.innerHTML === `${result[2].temp}C°`) {
-            x.innerHTML = 'Swapped text!';
-          } else {
-            x.innerHTML = `${result[2].temp}C°`;
+          if (x.innerHTML === `${result[2].temp}°C`) {
+            const FH = `${cToF(result[2].temp)}°F`;
+            x.innerHTML = FH;
             console.log(x);
+          } else {
+            x.innerHTML = `${result[2].temp}°C`;
           }
         });
         document.querySelector('#icon').setAttribute('src', `http://openweathermap.org/img/wn/${result[3].weather[0].icon}@2x.png`);
