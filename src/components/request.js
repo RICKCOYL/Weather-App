@@ -8,7 +8,7 @@ export default class Weather {
     const res = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${this.city},${this.country}id=524901&appid=${this.apiKey}`);
 
     const responseData = await res.json();
-    //console.log(responseData);
+
     return [responseData.weather, responseData.sys, responseData.main, responseData];
   }
 
