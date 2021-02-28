@@ -9,7 +9,7 @@
   "scripts": {
     "build": "webpack --mode production",
     "build-watch": "webpack --watch --mode production",
-    "start": "webpack --watch --mode=development",
+    "start-watch": "webpack --watch --mode=development",
     "dev": "node server.js",
     "heroku-postbuild": "echo Skip build on Heroku"
   },
