@@ -10,8 +10,8 @@
     "build": "webpack --mode production",
     "build-watch": "webpack --watch --mode production",
     "dev": "webpack --mode development",
-    "start": "webpack --watch --mode=development",
-    "start-node": "node server.js"
+    "start-dev": "webpack --watch --mode=development",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
