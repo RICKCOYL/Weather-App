@@ -9,9 +9,8 @@
   "scripts": {
     "build": "webpack --mode production",
     "build-watch": "webpack --watch --mode production",
-    "dev": "webpack --mode development",
-    "start-dev": "webpack --watch --mode=development",
-    "start": "node server.js"
+    "start": "webpack --watch --mode=development",
+    "dev": "node server.js"
   },
   "repository": {
     "type": "git",
