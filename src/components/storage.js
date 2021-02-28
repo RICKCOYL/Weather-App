@@ -1,8 +1,4 @@
 export default class Storage {
-  constructor() {
-    this.city;
-  }
-
   getLocationData() {
     if (localStorage.getItem('city') === null) {
       this.city = this.defaultCity;
@@ -15,7 +11,7 @@ export default class Storage {
     };
   }
 
-  setLocationData(city) {
-    localStorage.setItem('city', city);
+  setLocationData() {
+    localStorage.setItem('city', this.city);
   }
 }

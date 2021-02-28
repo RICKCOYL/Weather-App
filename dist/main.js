@@ -16,7 +16,7 @@
   \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Storage)\n/* harmony export */ });\nclass Storage {\n  constructor() {\n    this.city;\n  }\n\n  getLocationData() {\n    if (localStorage.getItem('city') === null) {\n      this.city = this.defaultCity;\n    } else {\n      this.city = localStorage.getItem('city');\n    }\n\n    return {\n      city: this.city,\n    };\n  }\n\n  setLocationData(city) {\n    localStorage.setItem('city', city);\n  }\n}\n\n//# sourceURL=webpack://Weather-App/./src/components/storage.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Storage)\n/* harmony export */ });\nclass Storage {\n  getLocationData() {\n    if (localStorage.getItem('city') === null) {\n      this.city = this.defaultCity;\n    } else {\n      this.city = localStorage.getItem('city');\n    }\n\n    return {\n      city: this.city,\n    };\n  }\n\n  setLocationData() {\n    localStorage.setItem('city', this.city);\n  }\n}\n\n//# sourceURL=webpack://Weather-App/./src/components/storage.js?");
 
 /***/ }),
 
