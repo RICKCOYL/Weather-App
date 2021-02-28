@@ -1,42 +1,32 @@
 import UI from './components/ui';
 import Weather from './components/weather';
 import Storage from './components/storage';
-// Init storage
+
 const storage = new Storage();
-// Get stored location data
 const weatherLocation = storage.getLocationData();
-// Init weather object
-const weather = new Weather(weatherLocation.city, weatherLocation.state);
-// Init UI
+const weather = new Weather(weatherLocation.city);
+
 const ui = new UI();
 
 
 function getWeather() {
-  weather.getWeather()
-    .then(results => {
-      // console.log(result);
-      ui.paint(results);
-    })
-    .catch(err => console.log(err));
+    weather.getWeather()
+        .then(results => {
+            ui.paint(results);
+        })
+        .catch(err => console.log(err));
 }
 
-// Get weather on DOM load
 document.addEventListener('DOMContentLoaded', getWeather);
 
-// Change location event
-document.getElementById('w-change-btn').addEventListener('click', (e) => {
-  const city = document.getElementById('city').value;
-  const state = document.getElementById('state').value;
+document.getElementById('w-change-btn').addEventListener('click', () => {
+    const city = document.getElementById('city').value;
 
-  // Change location
-  weather.changeLocation(city, state);
+    weather.changeLocation(city);
 
-  // Set location in LS
-  storage.setLocationData(city, state);
+    storage.setLocationData(city);
 
-  // Get and display weather
-  getWeather();
+    getWeather();
 
-  // Close modal
-  $('#locModal').modal('hide');
+    $('#locModal').modal('hide');
 });
