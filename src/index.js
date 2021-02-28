@@ -2,7 +2,7 @@ import UI from './components/ui';
 import Weather from './components/weather';
 import Storage from './components/storage';
 
-const storage = new Storage();
+const storage = new Storage(document.querySelector('#w-change-btn').value);
 const weatherLocation = storage.getLocationData();
 const weather = new Weather(weatherLocation.city);
 
