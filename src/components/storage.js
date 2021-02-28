@@ -3,6 +3,7 @@
 export default class Storage {
   constructor() {
     this.city;
+    this.defaultCity = 'London';
   }
 
   getLocationData() {

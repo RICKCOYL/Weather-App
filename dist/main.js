@@ -56,7 +56,7 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
   \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Storage)\n/* harmony export */ });\n/* eslint-disable no-unused-expressions */\n/* eslint-disable class-methods-use-this */\nclass Storage {\n  constructor() {\n    this.city;\n  }\n\n  getLocationData() {\n    if (localStorage.getItem('city') === null) {\n      this.city = this.defaultCity;\n    } else {\n      this.city = localStorage.getItem('city');\n    }\n\n    return {\n      city: this.city,\n    };\n  }\n\n  setLocationData(city) {\n    localStorage.setItem('city', city);\n  }\n}\n\n//# sourceURL=webpack://Weather-App/./src/components/storage.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ Storage)\n/* harmony export */ });\n/* eslint-disable no-unused-expressions */\n/* eslint-disable class-methods-use-this */\nclass Storage {\n  constructor() {\n    this.city;\n    this.defaultCity = 'London';\n  }\n\n  getLocationData() {\n    if (localStorage.getItem('city') === null) {\n      this.city = this.defaultCity;\n    } else {\n      this.city = localStorage.getItem('city');\n    }\n\n    return {\n      city: this.city,\n    };\n  }\n\n  setLocationData(city) {\n    localStorage.setItem('city', city);\n  }\n}\n\n//# sourceURL=webpack://Weather-App/./src/components/storage.js?");
 
 /***/ }),
 
