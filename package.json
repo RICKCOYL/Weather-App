@@ -7,7 +7,9 @@
     "build": "webpack --mode production",
     "build-watch": "webpack --watch --mode production",
     "dev": "webpack --mode development",
-    "start": "webpack --watch --mode=development"
+    "start": "webpack --watch --mode=development",
+    "start-node": "node server.js",
+    "heroku-postbuild": "webpack -p"
   },
   "repository": {
     "type": "git",
@@ -34,5 +36,8 @@
     "stylelint-scss": "^3.17.2",
     "worker-loader": "^3.0.8",
     "xxxxx": "^1.0.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
