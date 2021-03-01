@@ -7,11 +7,9 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "node dist/main.js",
-    "build-watch": "webpack --watch --mode production",
-    "start-watch": "webpack --watch --mode=development",
+    "watch": "webpack --watch",
     "build": "webpack",
-    "dev": "node server.js"
+    "dev": "webpack --mode development"
   },
   "repository": {
     "type": "git",
@@ -45,8 +43,6 @@
     "xxxxx": "^1.0.3"
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "natives": "^1.1.6"
-  },
-  "heroku-run-build-script": true
+    "express": "^4.17.1"
+  }
 }
