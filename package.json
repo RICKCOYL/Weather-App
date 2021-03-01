@@ -2,18 +2,13 @@
   "name": "Weather-App",
   "version": "1.0.0",
   "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
-  "private": true,
-  "main": "src/index.js",
-  "type": "module",
   "engines": {
-    "node": "14.x"
+    "yarn": "1.x"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --open 'google-chrome'",
-    "watch": "webpack --watch",
-    "prod": "NODE_ENV=production webpack",
-    "dev": "webpack"
+    "start": "node src/index.js",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
