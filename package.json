@@ -7,11 +7,10 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "webpack --mode production",
+    "build": "webpack --mode production",
     "build-watch": "webpack --watch --mode production",
     "start-watch": "webpack --watch --mode=development",
-    "build": "node server.js",
-    "heroku-postbuild": "echo Skip build on Heroku"
+    "dev": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -42,5 +41,5 @@
   "dependencies": {
     "express": "^4.17.1"
   },
-  "heroku-run-build-script": true
+  "heroku-run-build-script": false
 }
