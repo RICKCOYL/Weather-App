@@ -11,7 +11,8 @@
     "start": "node src/index.js",
     "watch": "webpack --watch",
     "build": "webpack",
-    "dev": "webpack --mode development"
+    "dev": "webpack --mode development",
+    "heroku-postbuild": "echo Skip build on Heroku"
   },
   "repository": {
     "type": "git",
@@ -46,5 +47,6 @@
   },
   "dependencies": {
     "express": "^4.17.1"
-  }
+  },
+  "heroku-run-build-script": true
 }
