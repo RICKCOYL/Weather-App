@@ -7,14 +7,13 @@
   },
   "main": "index.js",
   "scripts": {
-    "type": "module",
     "start": "node src/index.js",
     "build-watch": "webpack --watch --mode production",
     "start-watch": "webpack --watch --mode=development",
     "dev": "node server.js"
   },
   "repository": {
-    "type": "git",
+    "type": "module",
     "url": "git+https://github.com/RICKCOYL/Weather-App.git"
   },
   "keywords": [],
