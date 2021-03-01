@@ -10,8 +10,7 @@
     "start": "node src/index.js",
     "build-watch": "webpack --watch --mode production",
     "start-watch": "webpack --watch --mode=development",
-    "dev": "node server.js",
-    "heroku-postbuild": "ng build --prod"
+    "dev": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -42,5 +41,5 @@
   "dependencies": {
     "express": "^4.17.1"
   },
-  "heroku-run-build-script": false
+  "heroku-run-build-script": true
 }
