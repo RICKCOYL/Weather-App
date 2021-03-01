@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
     "watch": "webpack --watch",
     "build": "webpack",
     "dev": "webpack --mode development"
@@ -31,5 +32,8 @@
     "stylelint-scss": "^3.17.2",
     "webpack": "^5.24.2",
     "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
