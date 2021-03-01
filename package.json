@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
   "private": true,
+  "main": "src/index.js",
   "type": "module",
   "engines": {
     "node": "14.x"
