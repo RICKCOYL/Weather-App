@@ -7,6 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
+    "type": "module",
     "start": "node src/index.js",
     "build-watch": "webpack --watch --mode production",
     "start-watch": "webpack --watch --mode=development",
