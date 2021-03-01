@@ -1,18 +1,13 @@
 {
   "name": "Weather-App",
   "version": "1.0.0",
-  "description": "",
-  "type": "module",
-  "engines": {
-    "node": "14.x"
-  },
-  "main": "index.js",
+  "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
+  "main": "server.js",
   "scripts": {
-    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
     "build": "webpack",
-    "dev": "webpack --mode development",
-    "heroku-postbuild": "echo Skip build on Heroku"
+    "dev": "webpack --mode development"
   },
   "repository": {
     "type": "git",
@@ -26,27 +21,15 @@
   },
   "homepage": "https://github.com/RICKCOYL/Weather-App#readme",
   "devDependencies": {
-    "@babel/core": "^7.13.8",
-    "@babel/preset-env": "^7.13.8",
     "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.2.2",
-    "css-loader": "^5.0.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
-    "exports-loader": "^2.0.0",
-    "style-loader": "^2.0.0",
     "stylelint": "^13.3.3",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-csstree-validator": "^1.9.0",
     "stylelint-scss": "^3.17.2",
     "webpack": "^5.24.2",
-    "webpack-cli": "^4.5.0",
-    "worker-loader": "^3.0.8",
-    "xxxxx": "^1.0.3"
-  },
-  "dependencies": {
-    "express": "^4.17.1"
-  },
-  "heroku-run-build-script": true
+    "webpack-cli": "^4.5.0"
+  }
 }

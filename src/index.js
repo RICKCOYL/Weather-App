@@ -1,6 +1,6 @@
-import UI from './components/ui.mjs';
-import Weather from './components/weather.mjs';
-import Storage from './components/storage.mjs';
+import UI from './components/ui';
+import Weather from './components/weather';
+import Storage from './components/storage';
 import './css/style.css';
 
 const storage = new Storage(document.querySelector('#w-change-btn').value);
