@@ -13,7 +13,7 @@
     "dev": "node server.js"
   },
   "repository": {
-    "type": "module",
+    "type": "git",
     "url": "git+https://github.com/RICKCOYL/Weather-App.git"
   },
   "keywords": [],
@@ -24,7 +24,10 @@
   },
   "homepage": "https://github.com/RICKCOYL/Weather-App#readme",
   "devDependencies": {
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.13.8",
     "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.2.2",
     "css-loader": "^5.0.2",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
@@ -35,6 +38,7 @@
     "stylelint-config-standard": "^20.0.0",
     "stylelint-csstree-validator": "^1.9.0",
     "stylelint-scss": "^3.17.2",
+    "webpack": "^5.24.2",
     "worker-loader": "^3.0.8",
     "xxxxx": "^1.0.3"
   },
