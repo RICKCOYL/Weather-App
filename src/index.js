@@ -10,13 +10,18 @@ const weather = new Weather(weatherLocation.city);
 const ui = new UI();
 
 
-function getWeather() {
+const getWeather = () => {
   weather.getWeather()
     .then(results => {
       ui.paint(results);
     })
-    .catch(err => err);
-}
+    .catch(() => {
+      const error = document.querySelector('#error');
+      error.setAttribute('class', 'alert alert-danger');
+      error.setAttribute('role', 'alert');
+      error.textContent = 'SEARCH FOR A VALID CITY OR COUNTRY';
+    });
+};
 
 document.addEventListener('DOMContentLoaded', getWeather);
 
