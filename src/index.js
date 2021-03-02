@@ -17,9 +17,15 @@ const getWeather = () => {
     })
     .catch(() => {
       const error = document.querySelector('#error');
-      error.setAttribute('class', 'alert alert-danger');
+      error.setAttribute('class', 'alert alert-danger alert-dismissible fade show');
       error.setAttribute('role', 'alert');
       error.textContent = 'SEARCH FOR A VALID CITY OR COUNTRY';
+      const x = document.createElement('BUTTON');
+      x.setAttribute('type', 'button');
+      x.setAttribute('data-dismiss', 'alert');
+      x.setAttribute('class', 'close');
+      x.innerHTML = '&times;';
+      error.appendChild(x);
     });
 };
 
