@@ -8,7 +8,7 @@
 
 ## Live demo
 
-🔗 [visit the page]()
+🔗 [visit the page](https://wonderful-fermat-2733a4.netlify.app/)
 
 ## Built With
 
