@@ -17,7 +17,7 @@ class UI {
     this.string = document.querySelector('#temp-btn').addEventListener('click', () => {
       const x = document.getElementById('w-string');
       if (x.innerHTML === `${weather.main.temp}°C`) {
-        x.innerText = weather.main.temp * 1.8 + 32;
+        x.innerText = `${weather.main.temp * 1.8 + 32}°F`;
       } else {
         x.innerHTML = `${weather.main.temp}°C`;
       }
